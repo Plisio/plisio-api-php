@@ -26,7 +26,9 @@ $plisio->getBalances('BTC');
 New order:
 
 ```
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
+$secretKey = 'xxxxx';
 $request = [
           'amount' => float, // required Invoice amount in selected currency OR amount_usd can be used instead
 //          'amount_usd' => float, // required Invoice amoint in USD
