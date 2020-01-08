@@ -1,0 +1,29 @@
+{
+    "name": "plisio/plisio-api-php",
+    "version": "1.0.0",
+    "description": "Plisio API library for PHP",
+    "type": "library",
+    "keywords": [
+        "plisio",
+        "merchant",
+        "payment",
+        "gateway",
+        "ethereum",
+        "bitcoin",
+        "litecoin",
+        "zcash",
+        "dogecoin",
+        "bitcoin cash",
+    ],
+    "license": "MIT",
+    "homepage": "https://plisio.net",
+    "require": {
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Plisio\\": "src/"
+        }
+    }
+}
