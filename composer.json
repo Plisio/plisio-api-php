@@ -1,6 +1,6 @@
 {
     "name": "plisio/plisio-api-php",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Plisio API library for PHP",
     "type": "library",
     "keywords": [

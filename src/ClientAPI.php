@@ -1,4 +1,5 @@
 <?php
+
 namespace Plisio;
 
 class ClientAPI
@@ -20,6 +21,11 @@ class ClientAPI
     public function getBalances($currency)
     {
         return $this->apiCall('balances', array('currency' => $currency));
+    }
+
+    public function getCurrencies()
+    {
+        return $this->guestApiCall('currencies');
     }
 
     public function createTransaction($req)
@@ -89,10 +95,20 @@ class ClientAPI
         if (!$this->isSetup()) {
             return array('error' => 'You have not called the Setup function with your private and public keys!');
         }
+        return $this->guestApiCall($cmd, $req);
+    }
 
+    private function guestApiCall($cmd, $req = array())
+    {
         // Generate the query string
-        $post_data = http_build_query($req, '', '&');
-        $queryString = '?api_key=' . $this->secretKey . '&' . $post_data;
+        $queryString = '';
+        if (!empty($this->secretKey)) {
+            $req['api_key'] = $this->secretKey;
+        }
+        if (!empty($req)) {
+            $post_data = http_build_query($req, '', '&');
+            $queryString = '?' . $post_data;
+        }
 
         try {
             $apiUrl = $this->getApiUrl($cmd . $queryString);
