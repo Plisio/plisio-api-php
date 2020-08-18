@@ -145,4 +145,30 @@ class ClientAPI
         }
         return $dec;
     }
+
+    public function verifyCallbackData($data, $secretKey)
+    {
+        if (!isset($data['verify_hash'])) {
+            return false;
+        }
+
+        $post = $data;
+        $verifyHash = $post['verify_hash'];
+        unset($post['verify_hash']);
+        ksort($post);
+        if (isset($post['expire_utc'])){
+            $post['expire_utc'] = (string)$post['expire_utc'];
+        }
+        if (isset($post['tx_urls'])){
+            $post['tx_urls'] = html_entity_decode($post['tx_urls']);
+        }
+        $postString = serialize($post);
+        $checkKey = hash_hmac('sha1', $postString, $secretKey);
+
+        if ($checkKey != $verifyHash) {
+            return false;
+        }
+
+        return true;
+    }
 }
