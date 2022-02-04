@@ -32,6 +32,16 @@ class ClientAPI
     {
         return $this->apiCall('invoices/new', $req);
     }
+    
+    public function getTransactions()
+    {
+        return $this->apiCall('operations');
+    }
+
+    public function getTransactionDetails($id)
+    {
+        return $this->apiCall("operations/$id");
+    }
 
 
     /**
