@@ -1,0 +1,12 @@
+plisio-php-sdk:
+  common:
+    dev:
+      api-key:
+      base-uri:
+      user:
+      password:
+    prod:
+      api-key:
+      base-uri:
+  current-env: dev
+  silent: false

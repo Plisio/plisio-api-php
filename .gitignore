@@ -1,0 +1,7 @@
+.idea
+plisio-php-sdk-cache
+vendor
+composer.lock
+plisio-php-sdk.log
+.php-cs-fixer.cache
+conf.yaml

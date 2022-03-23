@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  plisio-php:
+    container_name: plisio-php
+    build: ./docker/php
+    volumes:
+      - ./:/var/sdk
+      - composer:/root/.composer/cache
+    environment:
+      - DEBUG=false
+volumes:
+  composer:

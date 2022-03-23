@@ -1,29 +1,26 @@
 {
-    "name": "plisio/plisio-api-php",
-    "version": "1.0.2",
-    "description": "Plisio API library for PHP",
-    "type": "library",
-    "keywords": [
-        "plisio",
-        "merchant",
-        "payment",
-        "gateway",
-        "ethereum",
-        "bitcoin",
-        "litecoin",
-        "zcash",
-        "dogecoin",
-        "bitcoin cash"
-    ],
-    "license": "MIT",
-    "homepage": "https://plisio.net",
-    "require": {
-        "ext-curl": "*",
-        "ext-json": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Plisio\\": "src/"
-        }
+  "autoload": {
+    "psr-4": {
+      "PlisioPhpSdk\\": "src/"
     }
+  },
+  "minimum-stability": "stable",
+  "name": "plisio-php-sdk/plisio-php-sdk",
+  "require": {
+    "php": ">=7.4",
+    "doctrine/annotations": "v1.13.2",
+    "php-di/php-di": "v6.3.5",
+    "webmozart/assert": "v1.10.0",
+    "symfony/cache": "v4.4.37",
+    "friendsofphp/php-cs-fixer": "v3.0.0",
+    "symfony/yaml": "v4.4.37",
+    "symfony/console": "v4.4.37",
+    "symfony/serializer": "5.4.x-dev",
+    "guzzlehttp/guzzle": "v7.0.x-dev",
+    "monolog/monolog": "v2.3.5"
+  }
+  ,
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  }
 }
